@@ -124,9 +124,9 @@ LIMIT 2
 UPDATE species 
 SET conservation_status ='HISTORIC'
 WHERE extract(year from discovery_date) < 1800
+    
 
 --**PROBLEM 8**__
-
 CREATE or REPLACE Function get_time_from_day(p_time TIMESTAMP)
 RETURNS VARCHAR(50)
 LANGUAGE plpgsql 
