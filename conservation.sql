@@ -104,10 +104,11 @@ WHERE location ILIKE '%Pass%'
 
 
 --**PROBLEM 4**--
-SELECT name,count(sighting_id) as total_sightings from rangers 
-JOIN sightings USING(ranger_id)
-GROUP BY name
-ORDER BY 
+SELECT name, COUNT(sighting_id) AS total_sightings 
+FROM rangers 
+LEFT JOIN sightings USING(ranger_id)
+GROUP BY name 
+ORDER BY total_sightings DESC;
 
 --**PROBLEM 5**__ 
 SELECT common_name from species
